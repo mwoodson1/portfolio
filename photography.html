@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography — Markus Woodson</title>
+  <meta name="description" content="Amateur landscape and nature photography by Markus Woodson, shot on Google Pixel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ─────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-brand">MW</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="photography.html" style="color:#fff;">Photography</a></li>
+        <li><a href="assets/markus-woodson-cv.pdf" target="_blank">CV</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ─── Hero ────────────────────────────────────────────────────────── -->
+  <div class="photo-page-hero">
+    <div class="container">
+      <h1>Photography</h1>
+      <p>
+        Landscapes, trails, and wildlife — captured on Google Pixel during hikes
+        and backpacking trips. All photos shot handheld, no edits beyond the
+        camera's default processing.
+      </p>
+    </div>
+  </div>
+
+  <!-- ─── Gallery ─────────────────────────────────────────────────────── -->
+  <main class="section">
+    <div class="container">
+
+      <!--
+        HOW TO ADD PHOTOS:
+        1. Copy your .jpg / .webp files into images/photography/
+        2. Replace each <div class="photo-masonry-placeholder"> block below with:
+
+           <a class="photo-masonry-item"
+              data-src="images/photography/your-photo.jpg"
+              data-alt="Description of photo"
+              href="#">
+             <img src="images/photography/your-photo.jpg" alt="Description of photo" loading="lazy">
+           </a>
+
+        3. You can add as many as you like — the masonry layout handles the rest.
+        4. Optionally group photos into categories using <h2 class="section-title"> headings.
+      -->
+
+      <!-- Category: National Parks -->
+      <h2 class="section-title" style="margin-bottom:24px;">National Parks &amp; Wilderness</h2>
+      <div class="photo-masonry">
+
+        <!-- Placeholder tiles — replace with real photos -->
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#1a3a1a,#4a8a3a);height:280px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#1a2e3a,#2a5a7a);height:200px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#2e2a1a,#7a6a2a);height:320px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#0a1e0a,#2a5a2a);height:240px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#1a1a2e,#3a3a7a);height:260px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#2a1a0a,#7a4a1a);height:200px;border-radius:6px;"></div>
+        </div>
+
+      </div>
+
+      <!-- Category: Trails & Landscapes -->
+      <h2 class="section-title" style="margin:48px 0 24px;">Trails &amp; Landscapes</h2>
+      <div class="photo-masonry">
+
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#0a2a1a,#1a6a3a);height:220px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#1a0a0a,#6a2a1a);height:300px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#0a0a1a,#1a2a5a);height:240px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#1a2a0a,#4a6a1a);height:280px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#2a2a1a,#6a6a3a);height:200px;border-radius:6px;"></div>
+        </div>
+        <div class="photo-masonry-placeholder">
+          <div style="background:linear-gradient(160deg,#0a1a2a,#2a4a6a);height:260px;border-radius:6px;"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ─── Lightbox ─────────────────────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- ─── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Markus Woodson</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/markuswoodson/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/markuswoodson" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=markuswoodson" target="_blank" rel="noopener">Scholar</a>
+        <a href="mailto:markus@example.com">Email</a>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Markus Woodson</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
