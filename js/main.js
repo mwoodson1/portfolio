@@ -15,19 +15,7 @@ if (toggle && navLinks) {
   });
 }
 
-// ─── Smooth scroll offset for sticky nav ───────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    const offset = 70;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
-
-// ─── Lightbox ───────────────────────────────────────────────────────────
+// ─── Lightbox (photography page) ─────────────────────────────────────────
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
@@ -56,24 +44,4 @@ if (lightbox && lightboxImg) {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
   });
-}
-
-// ─── Active nav link on scroll ──────────────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-
-if (sections.length && navAnchors.length) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navAnchors.forEach(a => {
-          a.style.color = a.getAttribute('href') === `#${entry.target.id}`
-            ? '#fff'
-            : '';
-        });
-      }
-    });
-  }, { rootMargin: '-60px 0px -60% 0px' });
-
-  sections.forEach(s => observer.observe(s));
 }

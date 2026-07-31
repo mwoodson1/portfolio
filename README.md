@@ -2,7 +2,9 @@
 
 Personal portfolio and CV site for Markus Woodson — Research Engineer, GenAI.
 
-Built with plain HTML/CSS/JS. No build step required. Hosted on GitHub Pages.
+Built with plain HTML/CSS/JS (no framework, no build step). Hosted on GitHub Pages.
+Design system: "Eco-Academic" — Hanken Grotesk type on a deep forest green / cream palette,
+originally explored in Google Stitch (see the design tokens ported into `css/style.css`).
 
 ---
 
@@ -21,30 +23,24 @@ python3 -m http.server 8000
 ## Customization Checklist
 
 ### Profile
-- [ ] Replace `images/profile.jpg` with your headshot (recommended: 400×400px, square crop)
-- [ ] Update the email address in `index.html` and `photography.html` (search for `markus@example.com`)
-- [ ] Update the GitHub URL in both pages if your handle differs from `markuswoodson`
-- [ ] Update the Google Scholar URL with your actual profile ID
-- [ ] Add your CV PDF at `assets/markus-woodson-cv.pdf`
+- [x] `images/profile.jpg` is set (600×600, square-cropped from a full-res photo). Swap it any time (same filename, or update the `src` in `index.html`)
+- [ ] Add your CV PDF at `assets/markus-woodson-cv.pdf` (linked from the "CV" nav item on every page)
 
-### Publications
-- [ ] Fill in the publication entries in `index.html` (search for `<!-- TODO: Replace with your actual publications -->`)
-- [ ] Each entry has: venue badge, year, title (linked to paper), authors (bold your name), and links
+### Work Cards / Projects
+Most cards use real images pulled from each project's official announcement (saved to `images/work/`).
+- [ ] Video Background Removal still uses a gradient placeholder — no clean official image was found; add one to `images/work/` and add an `<img>` tag to that card if you find a good source
+- [ ] Swap any image for a better one any time by replacing the file in `images/work/` (same filename) or updating the `src` in `projects.html`
 
-### Work Cards
-- [ ] Optionally add real screenshots/thumbnails:
-  - Save images to `images/work/` (recommended: 800×450px)
-  - In each `.work-card-image` div, uncomment the `<img>` tag and update the `src`
-
-### Photography
+### Photography (currently hidden)
+The Photography page and its nav link / home page teaser are commented out until there's a real gallery.
+To bring it back:
 - [ ] Copy your `.jpg` or `.webp` photos into `images/photography/`
 - [ ] In `photography.html`, replace each `photo-masonry-placeholder` block with the snippet shown in the comments
 - [ ] Update the category headings to match your photo collections
-- [ ] The lightbox activates automatically for any item with `data-src`
+- [ ] Un-comment the "Photography" nav link in every page's `<header>`, and the teaser section in `index.html`
 
 ### Branding
-- [ ] Update `<title>` and `<meta name="description">` in both HTML files
-- [ ] If you want a favicon, add `favicon.ico` or `favicon.png` to the root and link it in `<head>`
+- [ ] If you want a favicon, add `favicon.ico` or `favicon.png` to the root and link it in `<head>` on every page
 
 ---
 
@@ -61,7 +57,7 @@ python3 -m http.server 8000
    git add .
    git commit -m "Initial portfolio site"
    git branch -M main
-   git remote add origin https://github.com/markuswoodson/markuswoodson.github.io.git
+   git remote add origin https://github.com/mwoodson1/portfolio.git
    git push -u origin main
    ```
 
@@ -105,12 +101,14 @@ GitHub Pages auto-redeploys within ~30 seconds.
 
 ```
 portfolio/
-├── index.html          # Main page (about, work, publications, photo teaser)
-├── photography.html    # Full photography gallery
+├── index.html          # Home (hero/bio, photo teaser [currently commented out])
+├── research.html        # Full publications list, grouped by year
+├── projects.html        # Work/project cards
+├── photography.html    # Full photography gallery (currently unlinked — no nav entry yet)
 ├── css/
-│   └── style.css       # All styles
+│   └── style.css       # All styles (Eco-Academic design system)
 ├── js/
-│   └── main.js         # Mobile nav, lightbox, scroll behavior
+│   └── main.js         # Mobile nav, lightbox
 ├── images/
 │   ├── profile.jpg     # Your headshot (add this)
 │   ├── work/           # Work card thumbnails (optional)

@@ -2,3 +2,6 @@
 Thumbs.db
 *.swp
 *.swo
+
+# Design source export (not needed for the deployed site)
+portfolio_files.zip
